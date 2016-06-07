@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'The Battle Application' do
+describe 'Entering displaying player names' do
 
   before do
     visit '/'

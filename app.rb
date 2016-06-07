@@ -1,15 +1,24 @@
 require 'sinatra/base'
 
 class Battle < Sinatra::Base
+
+  enable :sessions
+  set :session_secret, 'Secret Session'
+
   get '/' do
-    erb(:battle_form)
+    erb(:index)
   end
 
-  post '/battle_main' do
-    p params
-    @player1 = params[:player1]
-    @player2 = params[:player2]
-    erb(:battle_main)
+  post '/names' do
+    session[:player1] = params[:player1]
+    session[:player2] = params[:player2]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player1 = session[:player1]
+    @player2 = session[:player2]
+    erb(:play)
   end
 
   # start the server if ruby file executed directly
