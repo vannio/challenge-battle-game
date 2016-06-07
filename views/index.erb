@@ -1,17 +1,5 @@
-<% unless @name.empty? %>
-<h1>My name is <%= @name %></h1>
-<% end %>
-
-<% if @name.empty? %>
-<form action="/named-cat">
+<form action="/named-cat" method="post">
   <input type="text" name="name" placeholder="Curiosity"><br>
   <input type="text" name="age" placeholder="25"><br>
   <input type="submit" value="Submittttt">
 </form>
-<% end %>
-
-<div style='border: 3px dashed red; display: inline-block;'>
-  <img src='http://bit.ly/1eze8aE'>
-</div>
-
-<%= @age if @age %>
