@@ -1,19 +1,10 @@
-require 'sinatra'
+require 'sinatra/base'
 
-get '/named-cat' do
-  @name = ["Joe", "Van"].sample
-  erb(:cat)
-end
+class Battle < Sinatra::Base
+  get '/' do
+    'Hello Battle!'
+  end
 
-post '/named-cat' do
-  p params
-  # @name = params.fetch(:name, "Tom")
-  @name = params[:name]
-  @age = params[:age]
-  erb(:cat)
-end
-
-get '/' do
-  p params
-  erb(:index)
+  # start the server if ruby file executed directly
+  run! if app_file == $0
 end
