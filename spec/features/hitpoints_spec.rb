@@ -1,9 +1,8 @@
+require_relative '../spec_helper'
+
 feature "hit points" do
   scenario 'allows user to see other players hit points' do
-    visit("/")
-    fill_in :player1, with: "Fai"
-    fill_in :player2, with: "Soph"
-    click_button "Play!"
+    sign_in_and_play
     expect(page).to have_content "Soph: 60HP"
   end
 
