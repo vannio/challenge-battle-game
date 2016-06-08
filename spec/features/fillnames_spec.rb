@@ -1,4 +1,3 @@
-# require 'capybara'
 
 feature "enter names" do
   scenario 'allows players to fill in their names and submit them' do
