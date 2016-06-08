@@ -1,4 +1,7 @@
-<h1>Hello <%=@player1%> and hello <%=@player2%></h1>
+<h1>Hello <%=@player1.name%> and hello <%=@player2.name%></h1>
 <div>
-  <h2><%= @player2 %>'s hitpoints: <%= @player2_hitpoints %></h2>
+  <h2><%= @player2.name %>'s hitpoints: <%= @player2.hitpoints %></h2>
 </div>
+<form action="/attack" method="post">
+  <input type="submit" value="Attack">
+</form>
