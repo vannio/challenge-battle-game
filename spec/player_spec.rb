@@ -13,10 +13,9 @@ describe Player do
     end
   end
 
-  describe '#attack' do
-    let(:player2) { described_class.new('Sophie') }
-    it 'reduces an opponent\'s hit points' do
-      expect {player.attack(player2)}.to change {player2.hit_points}.by(-10)
+  describe '#remove_hit_points' do
+    it 'removes hit points from player' do
+      expect { player.remove_hit_points }.to change { player.hit_points }.by(-10)
     end
   end
 end
