@@ -4,7 +4,7 @@ class Player
 
   attr_accessor :hit_points
 
-  def initialize(name)
+  def initialize(name="Player")
     @name = name
     @hit_points = 60
   end
