@@ -1,7 +1,5 @@
 require 'sinatra/base'
-require 'shotgun'
-require 'capybara'
-require 'player'
+require './lib/player'
 
 class Battle < Sinatra::Base
 
