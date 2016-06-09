@@ -8,7 +8,7 @@ describe Game do
 
     it 'reduces an opponent\'s hit points' do
       game.attack(player)
-      expect(player).to have_received(:remove_hit_points)
+      expect(player).to have_received(:receive_damage)
     end
   end
 end
