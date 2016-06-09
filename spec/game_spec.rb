@@ -9,7 +9,6 @@ describe Game do
     it 'should have two players by default' do
       expect(game.players.length).to eq 2
     end
-
   end
 
   describe '#attack' do
@@ -20,8 +19,4 @@ describe Game do
       expect(player).to have_received(:receive_damage)
     end
   end
-
-
-
-
 end

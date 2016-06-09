@@ -11,5 +11,3 @@ feature "attack" do
     expect(page).to have_content "Soph: 50HP"
   end
 end
-
-
