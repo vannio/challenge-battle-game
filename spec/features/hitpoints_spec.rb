@@ -3,4 +3,9 @@ feature "hit points" do
     sign_in_and_play
     expect(page).to have_content "Soph: 60HP"
   end
+
+  scenario 'shows the attacker hit points' do
+    sign_in_and_play
+    expect(page).to have_content 'Van: 60HP'
+  end
 end
