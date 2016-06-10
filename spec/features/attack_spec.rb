@@ -2,7 +2,7 @@ feature "attack" do
   before do
     allow(Kernel).to receive(:rand).and_return(10)
   end
-  
+
   scenario 'allows players to attack one another' do
     sign_in_and_play
     click_button 'Attack'
@@ -19,7 +19,7 @@ feature "attack" do
     sign_in_and_play
     click_button 'Attack'
     while find('.opponent-hitpoints').text.to_i > 0
-      click_button 'Switch turns'
+      click_button 'Attack'
     end
     expect(page).to have_content("HAHA LOSER")
   end

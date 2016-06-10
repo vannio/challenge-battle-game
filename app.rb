@@ -25,10 +25,22 @@ class Battle < Sinatra::Base
   post '/attack' do
     @player1 = Game.current.players.first
     @player2 = Game.current.players.last
-
+    @move_message = "#{ @player1.name } attacked #{ @player2.name }!"
     @player1_hp_percent = (@player1.hit_points / 60) * 100
     @player2_hp_percent = (@player2.hit_points / 60) * 100
+
     Game.current.attack(@player2)
+    erb(:attack)
+  end
+
+  post '/heal' do
+    @player1 = Game.current.players.first
+    @player2 = Game.current.players.last
+    @move_message = "#{ @player1.name} healed itself!"
+    @player1_hp_percent = (@player1.hit_points / 60) * 100
+    @player2_hp_percent = (@player2.hit_points / 60) * 100
+
+    Game.current.heal
     erb(:attack)
   end
 

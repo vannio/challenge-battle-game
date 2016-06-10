@@ -22,6 +22,11 @@ class Game
     switch
   end
 
+  def heal
+    @current_player.heal_damage
+    switch
+  end
+
   private
 
   def switch
