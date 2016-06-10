@@ -10,11 +10,11 @@ class Game
   end
 
   def self.current
-    @@game
+    @game
   end
 
   def self.start(player1=Player.new, player2=Player.new)
-    @@game = new(player1, player2)
+    @game = new(player1, player2)
   end
 
   def attack(player)
