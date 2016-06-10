@@ -1,10 +1,12 @@
-<h1> <%= @player1.name %> vs. <%= @player2.name %></h1>
+<h1><%= @player1.name %> vs. <%= @player2.name %></h1>
 
-<div class="opponent">
+<div class="opponent" style="float: left; width: 50%">
+  <strong>Opponent</strong><br>
   <%= @player2.name %>: <%= @player2.hit_points %>HP
 </div>
 
-<div class="attacker">
+<div class="attacker" style="float: right; width: 50%">
+  <strong>Attacker</strong><br>
   <%= @player1.name %>: <%= @player1.hit_points %>HP
 </div>
 

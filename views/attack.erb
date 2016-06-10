@@ -1,11 +1,14 @@
-<%= @player1.name %> attacked <%= @player2.name %>!
+<h1><%= @player1.name %> attacked <%= @player2.name %>!</h1>
 
-<div class="opponent">
-  <%= @player2.name %>: <%= @player2.hit_points %>HP
+<div class="opponent" style="float: left; width: 50%">
+  <strong>Opponent</strong><br>
+  <%= @player2.name %>: <span class="opponent-hitpoints"><%= @player2.hit_points %></span>HP
+  <% if @player2.hit_points == 0 %>HAHA LOSER<% end %>
 </div>
 
-<div class="attacker">
-  <%= @player1.name %>: <%= @player1.hit_points %>HP
+<div class="attacker" style="float: right; width: 50%">
+  <strong>Attacker</strong><br>
+  <%= @player1.name %>: <span class="attacker-hitpoints"><%= @player1.hit_points %></span>HP
 </div>
 
 <form action="/attack" method="post">
