@@ -1,9 +1,10 @@
 class Player
   HIT_POINTS = 100
-  attr_reader :name, :hit_points
+  attr_reader :name, :hit_points, :picture
 
-  def initialize(name="Player")
+  def initialize(name="Player", picture=nil)
     @name = name
+    @picture = picture
     @hit_points = HIT_POINTS
   end
 

@@ -3,6 +3,7 @@
 <div class="battlefield">
   <div class="opponent">
     <strong>Opponent</strong>: <%= @player2.name %>
+    <% if @player2.picture %><img src="<%= @player2.picture %>"><% end %>
     <div class="health-bar">
       <div class="health-left" style="width: <%= @player2.hit_points %>%"></div>
     </div>
@@ -12,6 +13,7 @@
 
   <div class="attacker">
     <strong>Attacker</strong>: <%= @player1.name %>
+    <% if @player1.picture %><img src="<%= @player1.picture %>"><% end %>
     <div class="health-bar">
       <div class="health-left" style="width: <%= @player1.hit_points %>%"></div>
     </div>
@@ -19,6 +21,8 @@
   </div>
 </div>
 
+<% unless @player2.hit_points == 0 %>
 <form action="/attack" method="post">
   <input type="submit" value="Switch turns">
 </form>
+<% end %>
