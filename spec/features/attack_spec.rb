@@ -8,7 +8,7 @@ feature "attack" do
   scenario 'reduces the opponent\'s HP' do
     sign_in_and_play
     click_button 'Attack'
-    expect(page).to have_content "Soph: 50HP"
+    expect(find('.opponent')).to have_content "90HP"
   end
 
   scenario 'show a lose message if a player reaches 0 hit_points' do

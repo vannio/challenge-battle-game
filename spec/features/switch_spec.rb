@@ -3,6 +3,6 @@ feature "switch" do
     sign_in_and_play
     click_button 'Attack'
     click_button 'Switch turns'
-    expect(page).to have_content('Van: 50HP')
+    expect(find('.opponent')).to have_content('90HP')
   end
 end
