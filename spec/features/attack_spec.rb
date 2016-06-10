@@ -1,4 +1,8 @@
 feature "attack" do
+  before do
+    allow(Kernel).to receive(:rand).and_return(10)
+  end
+  
   scenario 'allows players to attack one another' do
     sign_in_and_play
     click_button 'Attack'

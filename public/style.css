@@ -5,11 +5,9 @@ body {
 
 body {
   font-family: 'Cantarell', sans-serif;
-  /*font-family: 'Montserrat', sans-serif;*/
   text-align: center;
   margin: 2em;
   text-transform: uppercase;
-  /*background-color: #779999;*/
 }
 
 h1 {
@@ -55,4 +53,14 @@ img {
   text-transform: uppercase;
   display: flex;
   justify-content: space-around;
+}
+
+.filtered-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-image: url('');
+  z-index: -1;
 }
