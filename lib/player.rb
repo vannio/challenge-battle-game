@@ -1,15 +1,18 @@
 class Player
+  HIT_POINTS = 100
+  attr_reader :name, :hit_points, :picture
 
-  attr_reader :name
-
-  attr_accessor :hit_points
-
-  def initialize(name="Player")
+  def initialize(name="Player", picture=nil)
     @name = name
-    @hit_points = 60
+    @picture = picture
+    @hit_points = HIT_POINTS
   end
 
   def receive_damage
-    @hit_points -= 10
+    @hit_points -= Kernel.rand(1..10)
+  end
+
+  def heal_damage
+    @hit_points += Kernel.rand(1..5)
   end
 end

@@ -1,5 +1,33 @@
-<%= @player1.name %> attacked <%= @player2.name %>!
-<br> <%= @player2.name %>: <%= @player2.hit_points %>HP
+<h2><span class="player"><%= @move_message %></h2>
+
+<div class="battlefield">
+  <div class="opponent">
+    <strong>Opponent</strong>: <%= @player2.name %>
+    <% if @player2.picture %><img src="<%= @player2.picture %>"><% end %>
+    <div class="health-bar">
+      <div class="health-left" style="width: <%= @player2.hit_points %>%"></div>
+    </div>
+    <span class="opponent-hitpoints"><%= @player2.hit_points %></span>HP
+    <% if @player2.hit_points == 0 %><br>HAHA LOSER<% end %>
+  </div>
+
+  <div class="attacker">
+    <strong>Attacker</strong>: <%= @player1.name %>
+    <% if @player1.picture %><img src="<%= @player1.picture %>"><% end %>
+    <div class="health-bar">
+      <div class="health-left" style="width: <%= @player1.hit_points %>%"></div>
+    </div>
+    <span class="attacker-hitpoints"><%= @player1.hit_points %></span>HP
+  </div>
+</div>
+
+<% unless @player2.hit_points == 0 %>
 <form action="/attack" method="post">
-  <input type="submit" value="Switch turns">
+  <input type="submit" value="Attack">
 </form>
+<% unless @player1.hit_points >= 100 %>
+<form action="/heal" method="post">
+  <input type="submit" value="Heal">
+</form>
+<% end %>
+<% end %>
